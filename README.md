@@ -18,12 +18,12 @@ git push
 
 ## 关于授权
 
-**狒狒软件库**为新用户提供 免费的服务，但必须遵守**[费元星开源协议](http://www.feiyuanxing.com/kaiyuanxieyi.html)**才能继续使用。
+**狒狒软件库**为新用户提供 免费的服务，但必须遵守[**费元星开源协议**](http://www.feiyuanxing.com/kaiyuanxieyi.html)才能继续使用。
 
 
 ## 反馈与建议
-- QQ：[9715234](http://weibo.com/u/2788354117)
-- 邮箱：<feiyuanxing@gmail.com>
+- QQ：[9715234](http://qq.feiyuanxing.com)
+- 邮箱：[feiyuanxing@gmail.com](http://mail.feiyuanxing.com)
 
 ---------
 
