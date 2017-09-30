@@ -18,7 +18,7 @@ git push
 
 ## 关于授权
 
-**FSoftWare**为新用户提供 免费的服务，但必须遵守[**费元星开源协议**](http://www.feiyuanxing.com/kaiyuanxieyi.html)才能继续使用。
+**FSoftWare**为新用户提供 免费的服务，但必须遵守[**费元星开源协议**](http://feiyuanxing.com/kaiyuanxieyi/kaiyuanxieyi.html)才能继续使用。
 
 
 ## 反馈与建议
