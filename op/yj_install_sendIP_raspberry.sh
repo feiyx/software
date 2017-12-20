@@ -76,6 +76,7 @@ echo "Current time: `date "+%F %T"`. Enjoy it ${ETH0_IP_ADDR}" | mutt -s "IP Add
 sudo sed -i '/auto_send_ip/d' /etc/rc.local
 #sudo echo "${ROOT_HOME}/auto_send_ip.sh" >> /etc/rc.local
 #sudo sh -c ''${ROOT_HOME}'/auto_send_ip.sh >> /etc/rc.local' 
+chmod +x  auto_send_ip.sh
 sudo sh -c 'echo "/bin/sh '${ROOT_HOME}'/auto_send_ip.sh" >> /etc/rc.local' 
 
 echo "安装成功，试试重启自动发送邮件到${yourMail}!"

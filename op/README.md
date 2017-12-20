@@ -3,7 +3,7 @@
 >  注意：有问题，辛苦提Issue，每个星期固定会清理问题，谢谢。
 
 ```
-系统启动向给定邮箱发送网卡情况脚本：https://github.com/feiyx/software/op/yj_install_sendIP_raspberry.sh
+系统启动向给定邮箱发送网卡情况脚本：wget https://raw.githubusercontent.com/feiyx/software/master/op/yj_install_sendIP_raspberry.sh&&sh yj_install_sendIP_raspberry.sh
 
 
 ```
