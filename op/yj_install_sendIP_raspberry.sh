@@ -9,7 +9,7 @@
 read -p "请输入你的126邮箱：" yourMail
 read -p "请输入你的126邮箱密码，切记此处是授权码，获得途径请查看：https://jingyan.baidu.com/article/9faa72318b76bf473c28cbf7.html
 " yourMailPasswd
-read -p "请输入你邮箱smtp协议网址：126邮箱:smtp.aliyun.com ；QQ邮箱 smtp.qq.com
+read -p "请输入你邮箱smtp协议网址：126邮箱:smtp.126.com ；QQ邮箱 smtp.qq.com
 " yourMailSMTP
 
 
@@ -25,24 +25,26 @@ install_soft(){
 
 configure_env(){
 #环境
-echo "
-account default
+echo "account default
 host ${yourMailSMTP}
 from ${yourMail}
 auth plain
 user ${yourMail}
 password ${yourMailPasswd}
-logfile /var/log/msmtp.log
+# 生产环境不记录日志
+# logfile /var/log/msmtp.log
 
-" > .msmtprc
+" > ~/.msmtprc
 
-echo "
-set sendmail="/usr/bin/msmtp"
+echo "set sendmail="/usr/bin/msmtp"
 set use_from=yes
 set realname="RaspberryPi"
 set editor="vim"
 
-" > .muttrc
+" > ~/.muttrc
+
+
+chmod 0600 ~/.msmtprc
 
 
 sudo echo '#!/bin/bash
@@ -76,8 +78,7 @@ echo "Current time: `date "+%F %T"`. Enjoy it ${ETH0_IP_ADDR}" | mutt -s "IP Add
 sudo sed -i '/auto_send_ip/d' /etc/rc.local
 #sudo echo "${ROOT_HOME}/auto_send_ip.sh" >> /etc/rc.local
 #sudo sh -c ''${ROOT_HOME}'/auto_send_ip.sh >> /etc/rc.local' 
-chmod +x  auto_send_ip.sh
-sudo sh -c 'echo "/bin/sh '${ROOT_HOME}'/auto_send_ip.sh" >> /etc/rc.local' 
+sudo sh -c 'echo "su - pi -c \"/bin/sh '${ROOT_HOME}'/auto_send_ip.sh\"" >> /etc/rc.local' 
 
 echo "安装成功，试试重启自动发送邮件到${yourMail}!"
 
