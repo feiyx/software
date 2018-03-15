@@ -8,6 +8,11 @@
 
 ```
  
+如果未发送邮件，检查一下是否命令未安装成功
+sudo apt install msmtp
+	sudo apt install mutt
+
+
 
 ## 关于授权声明
 
