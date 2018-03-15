@@ -24,8 +24,8 @@ ROOT_HOME=$(cd `dirname $0`; pwd)
 
 install_soft(){
 	echo "开始安装基础环境(msmtp and mutt ...)"
-	sudo apt install msmtp
-	sudo apt install mutt
+	sudo apt install msmtp -y
+	sudo apt install mutt -y
 
 }
 
