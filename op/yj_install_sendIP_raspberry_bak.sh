@@ -12,21 +12,11 @@ if [ ! ${WHOAMI} = "root" ] ; then
 	su root
 fi
 
-read -p "请输入发件人邮箱，建议回车默认使用官方邮箱：" yourMail
-read -p "请输入你的邮箱密码，建议回车默认使用官方邮箱，切记126邮箱是授权码，获得途径请查看：https://jingyan.baidu.com/article/9faa72318b76bf473c28cbf7.html
+read -p "请输入你的126邮箱：" yourMail
+read -p "请输入你的126邮箱密码，切记此处是授权码，获得途径请查看：https://jingyan.baidu.com/article/9faa72318b76bf473c28cbf7.html
 " yourMailPasswd
-read -p "请输入你邮箱smtp协议网址，建议回车默认使用官方邮箱：126邮箱:smtp.126.com ；QQ邮箱 smtp.qq.com
+read -p "请输入你邮箱smtp协议网址：126邮箱:smtp.126.com ；QQ邮箱 smtp.qq.com
 " yourMailSMTP
-
-if [ x"" = x"${yourMail}" ] ; then
-	yourMail=weilx_info@126.com
-fi
-if [ x"" = x"${yourMailSMTP}" ] ; then
-	yourMailSMTP=smtp.126.com
-fi
-if [ x"" = x"${yourMailPasswd}" ] ; then
-	yourMailPasswd=weilxPASSWD783
-fi
 
 
 mkdir -p ~/script && cd ~/script/
@@ -35,7 +25,6 @@ ROOT_HOME=$(cd `dirname $0`; pwd)
 install_soft(){
 	echo "开始安装基础环境(msmtp and mutt ...)"
 	sudo apt install msmtp
-	sudo apt-get update 
 	sudo apt install mutt
 
 }
