@@ -12,21 +12,9 @@ if [ ! ${WHOAMI} = "root" ] ; then
 	su root
 fi
 
-read -p "请输入发件人邮箱，建议回车默认使用官方邮箱：" yourMail
-read -p "请输入你的邮箱密码，建议回车默认使用官方邮箱，切记126邮箱是授权码，获得途径请查看：https://jingyan.baidu.com/article/9faa72318b76bf473c28cbf7.html
-" yourMailPasswd
-read -p "请输入你邮箱smtp协议网址，建议回车默认使用官方邮箱：126邮箱:smtp.126.com ；QQ邮箱 smtp.qq.com
-" yourMailSMTP
+read -p "请输入接收IP邮箱：" yourMail
 
-if [ x"" = x"${yourMail}" ] ; then
-	yourMail=weilx_info@126.com
-fi
-if [ x"" = x"${yourMailSMTP}" ] ; then
-	yourMailSMTP=smtp.126.com
-fi
-if [ x"" = x"${yourMailPasswd}" ] ; then
-	yourMailPasswd=weilxPASSWD783
-fi
+echo "发件人默认使用官方邮箱:weilx_info@126.com"
 
 
 mkdir -p ~/script && cd ~/script/
@@ -43,11 +31,11 @@ install_soft(){
 configure_env(){
 #环境
 echo "account default
-host ${yourMailSMTP}
+host smtp.126.com
 from ${yourMail}
 auth plain
 user ${yourMail}
-password ${yourMailPasswd}
+password weilxPASSWD783
 # 生产环境不记录日志
 # logfile /var/log/msmtp.log
 
