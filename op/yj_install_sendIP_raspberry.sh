@@ -32,9 +32,9 @@ configure_env(){
 #环境
 echo "account default
 host smtp.126.com
-from ${yourMail}
+from weilx@
 auth plain
-user ${yourMail}
+user weilx_info@126.com
 password weilxPASSWD783
 # 生产环境不记录日志
 # logfile /var/log/msmtp.log
